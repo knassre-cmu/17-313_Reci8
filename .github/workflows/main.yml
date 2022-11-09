@@ -27,7 +27,7 @@ jobs:
           pipenv run pytest
 
 
-    format:
+    linter_name:
       name: runner / black formatter
       runs-on: ubuntu-latest
       steps:
