@@ -24,8 +24,9 @@ jobs:
           cd app
       - name: Run test suite
         run: |
-          pipenv run pytest -s -v -W ignore --cov=app
-
+          pipenv run pytest -s -v -W ignore --cache-clear --cov=app test/ > pytest-coverage.txt
+      - name: Comment coverage
+        uses: coroo/pytest-coverage-commentator@v1.0.2
 
   linter_name:
     name: format
